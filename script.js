@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     // === CONFIG: Google Apps Script Endpoint ===
-    const scriptURL = "LINK_GOOGLE_APPS_SCRIPT_SAYA";
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzIzwQ7nDsE6NiTEU2TtsCGV5QShvK33ORIuPlLGq7zY_CoMikqWyOp-A-raa-KG_Q9/exec";
 
     // --- DOM Element Selections ---
     const coverPage = document.getElementById('cover-page');
@@ -10,16 +10,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const audio = document.getElementById('background-music');
     const musicControl = document.getElementById('music-control');
     
-    // --- Particle System Overlay ---
+    // --- Multilayer Semarak Premium Particle Engine ---
     const leafContainer = document.getElementById('leaf-container');
     const structures = [
-        'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%237E57C2" opacity="0.35"><path d="M17,8C15,10 13,16 18,21C13,20 9,15 11,10C12,7.5 15,5 17,8Z"/></svg>', 
-        'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23D4AF37" opacity="0.3"><circle cx="12" cy="12" r="6" fill="none" stroke="%23D4AF37" stroke-width="1.5"/><circle cx="12" cy="12" r="2"/></svg>', 
-        'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23B39DDB" opacity="0.3"><path d="M12,2C14,6 20,8 16,12C20,16 14,18 12,22C10,18 4,16 8,12C4,8 10,6 12,2Z"/></svg>' 
+        'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%236F42C1" opacity="0.4"><path d="M12,2 L14.5,9.5 L22,12 L14.5,14.5 L12,22 L9.5,14.5 L2,12 L9.5,9.5 Z"/></svg>', 
+        'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23D4AF37" opacity="0.45"><circle cx="12" cy="12" r="6" fill="none" stroke="%23D4AF37" stroke-width="1.5"/><circle cx="12" cy="12" r="2"/></svg>', 
+        'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%237D5FFF" opacity="0.35"><path d="M12,2C14,6 20,8 16,12C20,16 14,18 12,22C10,18 4,16 8,12C4,8 10,6 12,2Z"/></svg>' 
     ];
 
     if (leafContainer) {
-        for (let i = 0; i < 22; i++) {
+        for (let i = 0; i < 24; i++) {
             const element = document.createElement('div');
             element.className = 'particle-flower';
             const size = 12 + Math.random() * 16;
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // --- Nama Tamu Undangan URL Parameter ---
+    // --- URL Query Parameter Name Parsing ---
     const guestNameDisplay = document.getElementById('guest-name-display');
     const urlParams = new URLSearchParams(window.location.search);
     const guestName = urlParams.get('to');
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
         guestNameDisplay.textContent = guestName.replace(/[+]/g, ' ');
     }
 
-    // --- Buka Undangan & Autoplay Musik ---
+    // --- Buka Undangan & Pemicu Audio ---
     if (openButton) {
         openButton.addEventListener('click', function() {
             coverPage.style.opacity = '0';
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 musicControl.classList.add('playing');
                 musicControl.innerHTML = '<i class="fa-solid fa-music"></i>';
             }).catch(error => {
-                console.warn("Autoplay ditangguhkan kebijakan browser:", error);
+                console.warn("Autoplay ditangguhkan kebijakan privasi browser:", error);
                 musicControl.classList.remove('playing');
                 musicControl.innerHTML = '<i class="fa-solid fa-volume-xmark"></i>';
             });
@@ -76,15 +76,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- Countdown Timer (Target: 18 Agustus 2026 Resepsi) ---
-    const countdownDate = new Date("Aug 18, 2026 09:00:00").getTime();
+    // --- Countdown Timer System (Target Resepsi: 18 Agustus 2026) ---
+    const countdownDate = new Date("Aug 18, 2026 11:00:00").getTime();
     const countdownFunction = setInterval(function() {
         const now = new Date().getTime();
         const distance = countdownDate - now;
 
         if (distance < 0) {
             clearInterval(countdownFunction);
-            document.getElementById("countdown").innerHTML = "<h4 style='font-family:var(--font-subheading); color:var(--color-purple-primary); font-size:1.1rem; width:100%; text-align:center;'>Acara Pernikahan Telah Berlangsung</h4>";
+            document.getElementById("countdown").innerHTML = "<h4 style='font-family:var(--font-subheading); color:var(--primary-purple); font-size:1.1rem; width:100%; text-align:center;'>Acara Pernikahan Telah Berlangsung</h4>";
             return;
         }
 
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
     }, 1000);
 
-    // --- Scroll Intersection Auto Animation ---
+    // --- Scroll Intersection Auto Animation trigger ---
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -114,18 +114,18 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(section);
     });
 
-    // --- RSVP Forms & Sinkronisasi Spreadsheet ---
+    // --- RSVP Forms & Google Spreadsheet Interactivity ---
     const rsvpForm = document.getElementById('rsvp-form');
     const wishesList = document.getElementById('wishes-list');
     const wishesLoading = document.getElementById('wishes-loading');
     const submitRsvpBtn = document.getElementById('submit-rsvp-btn');
 
     async function fetchWishes() {
-        if (!wishesList || scriptURL === "LINK_GOOGLE_APPS_SCRIPT_SAYA") return;
+        if (!wishesList) return;
         wishesList.innerHTML = '<div class="loading-spinner">Memuat ucapan...</div>';
         
         try {
-            const response = await fetch(scriptURL);
+            const response = await fetch(SCRIPT_URL);
             if (!response.ok) throw new Error("API Offline.");
             
             const data = await response.json();
@@ -141,8 +141,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 renderWishCard(wish);
             });
         } catch (error) {
-            console.error("Gagal memuat ucapan:", error);
-            wishesList.innerHTML = '<div class="no-wishes-message" style="color: #C62828;">Gagal memuat daftar ucapan.</div>';
+            console.error("Sinkronisasi daftar ucapan gagal:", error);
+            wishesList.innerHTML = '<div class="no-wishes-message" style="color: #c5221f;">Gagal memuat daftar ucapan.</div>';
         }
     }
 
@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             submitRsvpBtn.disabled = true;
-            if (wishesLoading) wishesLoading.style.display = 'block';
+            if(wishesLoading) wishesLoading.style.display = 'block';
 
             const payload = new URLSearchParams();
             payload.append('name', nameInput);
@@ -190,41 +190,37 @@ document.addEventListener('DOMContentLoaded', function() {
             payload.append('message', messageInput);
 
             try {
-                if (scriptURL !== "LINK_GOOGLE_APPS_SCRIPT_SAYA") {
-                    await fetch(scriptURL, {
-                        method: 'POST',
-                        mode: 'no-cors', 
-                        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                        body: payload.toString()
-                    });
-                }
+                await fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors', 
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: payload.toString()
+                });
 
                 showToast('Ucapan berhasil dikirim!');
                 rsvpForm.reset();
-                
-                // Render ucapan langsung ke tampilan
-                renderWishCard({ name: nameInput, status: statusSelect, message: messageInput });
+                setTimeout(async () => { await fetchWishes(); }, 1000);
 
             } catch (error) {
                 console.error("Gagal mengunggah data:", error);
                 showToast('Koneksi bermasalah. Gagal mengirim ucapan.', 'error');
             } finally {
                 submitRsvpBtn.disabled = false;
-                if (wishesLoading) wishesLoading.style.display = 'none';
+                if(wishesLoading) wishesLoading.style.display = 'none';
             }
         });
     }
 
     fetchWishes();
 
-    // --- Toast & Copy Rekening ---
+    // --- Toast & Clipboard Mechanism ---
     const toast = document.getElementById('toast-notification');
     let toastTimer;
     
     function showToast(message, type = 'success') {
         clearTimeout(toastTimer);
         toast.textContent = message;
-        toast.style.borderColor = type === 'error' ? '#C62828' : 'rgba(126, 87, 194, 0.4)';
+        toast.style.borderColor = type === 'error' ? '#c5221f' : 'rgba(111,66,193,0.4)';
         toast.classList.add('show');
         toastTimer = setTimeout(() => { toast.classList.remove('show'); }, 3000);
     }
@@ -234,8 +230,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetSelector = button.dataset.clipboardTarget;
             const textToCopy = document.querySelector(targetSelector).innerText;
             navigator.clipboard.writeText(textToCopy).then(() => {
-                showToast('Nomor rekening berhasil disalin!');
-            }).catch(err => showToast('Gagal menyalin rekening.', 'error'));
+                showToast('Berhasil disalin ke clipboard!');
+            }).catch(err => showToast('Gagal menyalin teks.', 'error'));
         });
     });
     
