@@ -75,69 +75,74 @@ a:hover {
     height: auto !important;
 }
 
-/* --- COVER / HERO SECTION (DIATUR KE ATAS & PROPORSIONAL) --- */
+/* --- COVER / HERO SECTION (PRESISI & SIMETRIS DI LAYAR PENUH) --- */
 #cover-page {
     background-image: url('photo/foto1.png'), radial-gradient(circle at 50% 50%, #FFF9FD 0%, #F3DDF5 100%);
     position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
     background-size: cover; background-position: center;
-    display: flex; flex-direction: column; justify-content: flex-start; align-items: center;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
     z-index: 1000;
-    padding-top: 40px; /* Ditinggikan agar tidak terlalu bawah */
+    padding: 20px;
 }
 
 .hero-overlay {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(180deg, rgba(255, 249, 253, 0.15) 0%, rgba(243, 221, 245, 0.35) 100%);
+    background: linear-gradient(180deg, rgba(255, 249, 253, 0.2) 0%, rgba(243, 221, 245, 0.4) 100%);
     backdrop-filter: blur(0px);
     z-index: 1;
 }
 
 .hero-content-fluid {
     position: relative; z-index: 2; text-align: center; color: var(--color-heading); 
-    padding: 10px 20px; max-width: 600px; width: 90%;
+    padding: 10px 15px; max-width: 550px; width: 95%;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
 }
 
 .style-dark-contrast {
     color: var(--color-heading) !important;
-    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.9) !important;
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.95) !important;
 }
 
 .hero-subtext {
-    font-family: var(--font-body); font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; 
+    font-family: var(--font-body); font-size: clamp(0.75rem, 2.5vw, 0.88rem); font-weight: 600; margin-bottom: 6px; 
     letter-spacing: 4px; text-transform: uppercase; color: var(--color-subheading);
 }
+
 .hero-names-wrapper {
     display: flex; flex-direction: column; align-items: center; justify-content: center;
-    margin: 10px 0;
+    margin: 8px 0;
 }
 .hero-name-line {
-    font-family: var(--font-heading); font-size: clamp(3.5rem, 12vw, 5.5rem); 
-    font-weight: normal; color: var(--color-heading); line-height: 0.95;
+    font-family: var(--font-heading); font-size: clamp(3.2rem, 11vw, 4.8rem); 
+    font-weight: normal; color: var(--color-heading); line-height: 1;
     text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.95);
 }
 .hero-ampersand {
-    font-family: var(--font-subheading); font-size: 1.8rem; font-style: italic;
-    color: var(--color-gold); margin: 4px 0; font-weight: 400;
+    font-family: var(--font-subheading); font-size: clamp(1.4rem, 4vw, 1.9rem); font-style: italic;
+    color: var(--color-gold); margin: 2px 0; font-weight: 400;
     text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.9);
 }
+
 .hero-date-text {
-    font-family: var(--font-subheading); font-size: 1.25rem; font-weight: 700;
+    font-family: var(--font-subheading); font-size: clamp(1.1rem, 3.5vw, 1.35rem); font-weight: 700;
     color: var(--color-subheading) !important;
-    margin: 10px 0 20px 0; letter-spacing: 1.2px;
+    margin: 8px 0 16px 0; letter-spacing: 1px;
 }
+
 .hero-content-fluid .yth-text { 
-    font-family: var(--font-subheading); font-size: 1.05rem; font-style: italic; 
-    color: var(--color-caption) !important; margin-top: 15px;
+    font-family: var(--font-subheading); font-size: clamp(0.95rem, 3vw, 1.1rem); font-style: italic; 
+    color: var(--color-caption) !important; margin-top: 10px;
 }
+
 #guest-name-display { 
-    font-family: var(--font-subheading); font-weight: 700; font-size: 1.6rem; 
-    margin: 4px 0 25px 0; color: var(--color-heading); letter-spacing: 0.5px; 
+    font-family: var(--font-subheading); font-weight: 700; font-size: clamp(1.3rem, 4vw, 1.65rem); 
+    margin: 2px 0 20px 0; color: var(--color-heading); letter-spacing: 0.5px; 
     text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.9);
 }
 
 #open-invitation-btn {
     background: linear-gradient(135deg, #BD83CE, #A864BE);
-    color: #ffffff; border: none; padding: 14px 38px; border-radius: 50px; cursor: pointer;
+    color: #ffffff; border: none; padding: 13px 36px; border-radius: 50px; cursor: pointer;
     font-family: var(--font-body); font-weight: 600; font-size: 0.8rem; letter-spacing: 2px; 
     text-transform: uppercase; transition: var(--transition-smooth);
     animation: pulse 2.5s infinite; box-shadow: 0 10px 25px rgba(168,100,190,0.25);
@@ -564,7 +569,7 @@ a:hover {
 .toast.show { bottom: 35px; }
 
 @media (max-width: 768px) {
-    #cover-page { padding-top: 30px; }
+    #cover-page { padding: 15px 10px; }
     #main-content { padding: 35px 12px; }
     .card-header { padding: 50px 20px 35px 20px; }
     .mempelai-section { padding: 55px 20px; }
@@ -585,4 +590,3 @@ a:hover {
     .gift-wrapper-flex { flex-direction: column; align-items: center; }
     .gift-box { max-width: 100%; }
 }
-
