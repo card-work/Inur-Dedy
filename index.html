@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan - Dedy & Inur</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Premium Islamic Melayu Typography Combo -->
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Great+Vibes&family=Nunito:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Particle Overlay Ornamen Melayu & Floral -->
+    <div id="leaf-container"></div>
+    
+    <!-- Hero / Cover Depan -->
+    <div id="cover-page">
+        <div class="hero-overlay"></div>
+        <div class="hero-content-fluid">
+            <p class="hero-subtext style-dark-contrast">UNDANGAN PERNIKAHAN</p>
+            
+            <div class="cover-illustration-wrapper">
+                <img src="assets/images/cartoon-cover.png" alt="Ilustrasi Mempelai Melayu" class="cover-cartoon-img" onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=500';">
+            </div>
+
+            <div class="hero-names-wrapper">
+                <span class="hero-name-line">Dedy</span>
+                <span class="hero-ampersand">&</span>
+                <span class="hero-name-line">Inur</span>
+            </div>
+            
+            <p class="hero-date-text style-dark-contrast">Selasa, 18 Agustus 2026</p>
+            
+            <p class="yth-text style-dark-contrast">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
+            <h2 id="guest-name-display">Tamu Undangan</h2>
+            <button id="open-invitation-btn"><i class="fa-solid fa-envelope-open"></i> Buka Undangan</button>
+        </div>
+    </div>
+
+    <!-- Konten Utama (Muncul setelah klik buka undangan) -->
+    <div id="main-content" style="display: none;">
+        <div class="card">
+            
+            <!-- SECTION HERO INNER -->
+            <div class="card-header animated-section section-premium" id="sec-hero">
+                <div class="ornament top-left floral-line"></div>
+                <div class="ornament bottom-right big-flower"></div>
+                
+                <h1 class="premium-heading">Walimatul 'Ursy</h1>
+                <div class="couple-photo-container-circle">
+                    <img src="assets/images/cartoon-cover.png" alt="Ilustrasi Pengantin Melayu" class="couple-photo-circle" onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=500';">
+                </div>
+                <h2 class="couple-names">Dedy & Inur</h2>
+                <p class="invitation-text">
+                    Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud menyelenggarakan pernikahan kami. Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu.
+                </p>
+            </div>
+
+            <!-- SECTION QURAN -->
+            <div class="quran-section animated-section section-premium" id="sec-quran">
+                <div class="quran-ornament"><i class="fa-solid fa-star-and-crescent"></i></div>
+                <p class="arabic">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ أَزْوَاجًا لِتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَوَدَّةً وَرَحْمَةً</p>
+                <p class="translation">"Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri agar kamu merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang."</p>
+                <p class="surah">QS. Ar-Rum Ayat 21</p>
+            </div>
+
+            <!-- SECTION MEMPELAI -->
+            <div class="mempelai-section animated-section section-premium" id="sec-mempelai" data-delay="0.1">
+                <div class="ornament watermark center-watermark mempelai-floral-watermark"></div>
+                <div class="ornament top-left mempelai-floral-top"></div>
+                <div class="ornament bottom-right mempelai-floral-bottom"></div>
+                
+                <div class="mempelai-header">
+                    <h2 class="mempelai-bismillah-arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</h2>
+                    <p class="mempelai-intro">
+                        Dengan memohon rahmat dan ridho Allah SWT, izinkan kami memperkenalkan kedua mempelai yang akan melangsungkan akad suci dan resepsi pernikahan.
+                    </p>
+                </div>
+
+                <div class="mempelai-container">
+                    <!-- Card Mempelai Pria -->
+                    <div class="mempelai-card">
+                        <div class="mempelai-photo-wrapper">
+                            <img src="assets/images/cartoon-profile-pria.png" alt="Dedy Nopanji, SKM" class="mempelai-photo" onerror="this.src='assets/images/cartoon-pria.png';">
+                        </div>
+                        <h3 class="mempelai-name">Dedy Nopanji, SKM</h3>
+                        <p class="mempelai-nickname">( Dedy )</p>
+                        <p class="mempelai-parent-title">Putra dari</p>
+                        <p class="mempelai-parent-names">Bapak Sahinen<br>dan<br>Ibu Irawati Marda</p>
+                    </div>
+
+                    <!-- Elemen dekoratif ampersand (&) -->
+                    <div class="mempelai-divider-ampersand">&</div>
+
+                    <!-- Card Mempelai Wanita -->
+                    <div class="mempelai-card">
+                        <div class="mempelai-photo-wrapper">
+                            <img src="assets/images/cartoon-profile-wanita.png" alt="Nur'aini, Amd.Farm" class="mempelai-photo" onerror="this.src='assets/images/cartoon-wanita.png';">
+                        </div>
+                        <h3 class="mempelai-name">Nur'aini, Amd.Farm</h3>
+                        <p class="mempelai-nickname">( Inur )</p>
+                        <p class="mempelai-parent-title">Putri dari</p>
+                        <p class="mempelai-parent-names">Bapak Alm. Ishaq Amin<br>dan<br>Ibu Tarmini</p>
+                    </div>
+                </div>
+
+                <div class="mempelai-quote">
+                    <p>"Semoga Allah menghimpun yang terserak dari keduanya, memberkahi mereka berdua, meningkatkan kualitas keturunannya, menjadikan pembuka pintu rahmat, sumber ilmu dan hikmah serta pemberi rasa aman bagi umat."</p>
+                </div>
+            </div>
+
+            <!-- SECTION COUNTDOWN -->
+            <div id="countdown" class="animated-section section-premium">
+                <div class="ornament watermark center-watermark floral-watermark"></div>
+                <div class="ornament bottom-right leaves-ornament"></div>
+                
+                <div class="countdown-item"><span id="days">00</span><p>Hari</p></div>
+                <div class="countdown-item"><span id="hours">00</span><p>Jam</p></div>
+                <div class="countdown-item"><span id="minutes">00</span><p>Menit</p></div>
+                <div class="countdown-item"><span id="seconds">00</span><p>Detik</p></div>
+            </div>
+
+            <!-- SECTION ACARA -->
+            <div class="event-details animated-section section-premium" id="sec-acara">
+                <div class="ornament top-left flower-style-1"></div>
+                <div class="ornament bottom-right flower-style-2"></div>
+                
+                <div class="event-title-container">
+                    <i class="fa-solid fa-map-location-dot event-main-icon"></i>
+                    <h2 class="event-section-heading">Waktu & Tempat Acara</h2>
+                </div>
+
+                <!-- CARD AKAD -->
+                <div class="event-card-akad-style">
+                    <div class="event-card-icon"><i class="fa-solid fa-ring"></i></div>
+                    <h4 class="event-card-sub">Akad Nikah</h4>
+                    <p class="event-card-value-akad">Jumat, 14 Agustus 2026</p>
+                </div>
+
+                <!-- AREA RESEPSI -->
+                <div class="resepsi-master-wrapper">
+                    <div class="event-card-v2 main-premium-accent-card">
+                        <div class="event-card-icon-main"><i class="fa-solid fa-calendar-days"></i></div>
+                        <h4 class="event-card-sub-main">Hari & Tanggal</h4>
+                        <div class="premium-badge-v2">Resepsi Pernikahan</div>
+                        <p class="event-card-value-main">Selasa, 18 Agustus 2026</p>
+                    </div>
+                    
+                    <div class="event-card-v2 transparent-blur-card">
+                        <div class="event-card-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <h4 class="event-card-sub">Lokasi Acara</h4>
+                        <p class="event-card-value-address">
+                            Lingk. Peua Thaib, Lorong Masjid, Gampong Teungoh, Kecamatan Langsa Kota, Kota Langsa
+                        </p>
+                    </div>
+                </div>
+
+                <div class="action-button-group">
+                    <a href="https://maps.app.goo.gl/" target="_blank" id="btn-google-maps" class="action-button">
+                        <i class="fa-solid fa-location-arrow"></i> Lihat Lokasi Google Maps
+                    </a>
+                </div>
+            </div>
+
+            <!-- SECTION GALLERY -->
+            <div class="gallery-section animated-section section-premium" id="sec-gallery">
+                <div class="ornament top-right flower-style-3"></div>
+                <div class="ornament watermark center-watermark flower-watermark-2"></div>
+                
+                <h2 class="section-title">Galeri Kebersamaan</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item-wrapper">
+                        <img src="assets/images/gallery1.jpg" alt="Gallery Image 1" class="gallery-item ratio-3-4" onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=500';">
+                    </div>
+                    <div class="gallery-item-wrapper">
+                        <img src="assets/images/gallery2.jpg" alt="Gallery Image 2" class="gallery-item ratio-3-4" onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=500';">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- SECTION RSVP / BUKU TAMU -->
+            <div class="guestbook-section animated-section section-premium" id="sec-rsvp">
+                <div class="ornament top-left floral-style-4"></div>
+                <div class="ornament bottom-right floral-style-5"></div>
+                
+                <div class="guestbook-title-container">
+                    <i class="fa-regular fa-pen-to-square guestbook-main-icon"></i>
+                    <h2 class="guestbook-section-heading">Buku Tamu & Ucapan Doa</h2>
+                </div>
+
+                <form id="rsvp-form">
+                    <div class="form-group-v2">
+                        <label for="rsvp-name">Nama Anda</label>
+                        <input type="text" id="rsvp-name" placeholder="Masukkan nama lengkap Anda" required>
+                    </div>
+                    
+                    <div class="form-group-v2">
+                        <label for="rsvp-status">Konfirmasi Kehadiran</label>
+                        <select id="rsvp-status" required>
+                            <option value="" disabled selected>-- Pilih Kehadiran --</option>
+                            <option value="Hadir">Hadir</option>
+                            <option value="Tidak Hadir">Tidak Hadir</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group-v2">
+                        <label for="rsvp-message">Ucapan & Doa Restu</label>
+                        <textarea id="rsvp-message" rows="4" placeholder="Tuliskan doa restu untuk kedua mempelai..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" id="submit-rsvp-btn"><i class="fa-regular fa-paper-plane"></i> Kirim Ucapan</button>
+                </form>
+                
+                <div id="wishes-loading" class="loading-spinner" style="display: none;">Mengirim Ucapan...</div>
+                <div id="wishes-list"></div>
+            </div>
+
+            <!-- SECTION WEDDING GIFT -->
+            <div class="gift-section animated-section section-premium" id="sec-gift">
+                <div class="ornament watermark center-watermark floral-line-center"></div>
+                <div class="ornament top-right leaves-style-2"></div>
+                
+                <h2 class="section-title">Wedding Gift</h2>
+                <p class="section-subtitle">Doa restu Anda merupakan karunia yang sangat berarti bagi kami. Namun jika Anda ingin memberi tanda kasih, dapat dikirimkan melalui rekening di bawah ini:</p>
+                
+                <div class="gift-wrapper-flex">
+                    <div class="gift-box">
+                        <i class="fa-solid fa-building-columns fa-2x gift-bank-icon"></i>
+                        <h4 class="gift-bank-title">Bank Aceh</h4>
+                        <p id="account-number">04102036504859</p>
+                        <p class="gift-account-name">a.n. NUR'AINI</p>
+                        <button class="copy-button" data-clipboard-target="#account-number"><i class="fa-solid fa-copy"></i> Salin No. Rekening</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION FOOTER -->
+            <div class="card-footer animated-section section-premium" id="sec-footer">
+                <div class="ornament bottom-center big-flower-footer"></div>
+                <div class="ornament top-left small-floral-footer"></div>
+                <p>Terima Kasih</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Preview Galeri -->
+    <div id="gallery-modal" class="modal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modal-image" alt="Preview Gambar">
+    </div>
+
+    <!-- Background Music Player -->
+    <audio id="background-music" loop>
+        <source src="lagu/laguu.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="floating-controls">
+        <div id="music-control" class="control-btn" aria-label="Play/Pause Music">
+            <i class="fa-solid fa-music"></i>
+        </div>
+    </div>
+    
+    <div id="toast-notification" class="toast">Notifikasi</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
