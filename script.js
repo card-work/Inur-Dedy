@@ -13,9 +13,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- Multilayer Semarak Premium Particle Engine ---
     const leafContainer = document.getElementById('leaf-container');
     const structures = [
-        'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23bd83ce" opacity="0.35"><path d="M17,8C15,10 13,16 18,21C13,20 9,15 11,10C12,7.5 15,5 17,8Z"/></svg>', 
-        'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23e5b0ea" opacity="0.3"><circle cx="12" cy="12" r="6" fill="none" stroke="%23e5b0ea" stroke-width="1.5"/><circle cx="12" cy="12" r="2"/></svg>', 
-        'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23f1c6e7" opacity="0.35"><path d="M12,2C14,6 20,8 16,12C20,16 14,18 12,22C10,18 4,16 8,12C4,8 10,6 12,2Z"/></svg>' 
+        'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23BD83CE" opacity="0.4"><path d="M17,8C15,10 13,16 18,21C13,20 9,15 11,10C12,7.5 15,5 17,8Z"/></svg>', 
+        'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23E5B0EA" opacity="0.35"><circle cx="12" cy="12" r="6" fill="none" stroke="%23E5B0EA" stroke-width="1.5"/><circle cx="12" cy="12" r="2"/></svg>', 
+        'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23D4AF37" opacity="0.3"><path d="M12,2C14,6 20,8 16,12C20,16 14,18 12,22C10,18 4,16 8,12C4,8 10,6 12,2Z"/></svg>' 
     ];
 
     if (leafContainer) {
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (distance < 0) {
             clearInterval(countdownFunction);
-            document.getElementById("countdown").innerHTML = "<h4 style='font-family:var(--font-subheading); color:var(--color-theme-brown); font-size:1.1rem; width:100%; text-align:center;'>Acara Pernikahan Telah Berlangsung</h4>";
+            document.getElementById("countdown").innerHTML = "<h4 style='font-family:var(--font-subheading); color:var(--color-heading); font-size:1.1rem; width:100%; text-align:center;'>Acara Pernikahan Telah Berlangsung</h4>";
             return;
         }
 
@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function showToast(message, type = 'success') {
         clearTimeout(toastTimer);
         toast.textContent = message;
-        toast.style.borderColor = type === 'error' ? '#c5221f' : 'rgba(189,131,206,0.5)';
+        toast.style.borderColor = type === 'error' ? '#c5221f' : 'rgba(229,176,234,0.6)';
         toast.classList.add('show');
         toastTimer = setTimeout(() => { toast.classList.remove('show'); }, 3000);
     }
